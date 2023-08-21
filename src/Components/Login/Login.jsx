@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import strings from "../Constants/StringConstants";
 
 const Login = () => {
+  //   const [dummyApiData, setDummyApiData] = useState({});
+  //   const dummyApiCall = () => {
+  //     fetch("https://reqres.in/api/users?page=2")
+  //       .then((results) => {
+  //         console.log("result is : " + results);
+  //         return results.json();
+  //       })
+  //       .then((data) => {
+  //         console.log("data is : " + JSON.stringify(data));
+  //         setDummyApiData(data);
+  //       });
+  //   };
+
+  useEffect(() => {
+    // dummyApiCall();
+  }, []);
+
+  //   useEffect(() => {
+  //   }, [dummyApiData]);
+
   return (
     <div>
       <div style={styles.headerTextDiv}>
         <h1 style={styles.welcomeTextStyles}>Welcome</h1>
 
-        <div>
+        <div style={styles.inputstyleText}>
           <input type placeholder="Username" />
           <br />
           <input type placeholder="Password" />
@@ -22,6 +42,7 @@ const Login = () => {
         <Link to="/SignUp">{strings.goToText} SignUp</Link>
         <br />
         <Link to="/ForgotPassword">{strings.goToText} ForgotPassword</Link>
+        <p>{JSON.stringify(dummyApiData.page)}</p>
       </div>
     </div>
   );
@@ -42,6 +63,9 @@ const styles = {
     marginTop: "10px",
     backgroundColor: "Green",
     textAlign: "center",
+  },
+  inputstyleText: {
+    // textDecoration:
   },
 };
 
