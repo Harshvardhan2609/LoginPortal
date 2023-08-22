@@ -24,17 +24,17 @@ const Login = () => {
   //   }, [dummyApiData]);
 
   return (
-    <div>
+    <div className="Body">
       <div style={styles.headerTextDiv}>
         <h1 style={styles.welcomeTextStyles}>Welcome</h1>
 
-        <div style={styles.inputstyleText}>
+        <div className="Input" style={styles.inputstyleText}>
           <input type placeholder="Username" />
           <br />
           <input type placeholder="Password" />
           <br />
         </div>
-        <div>
+        <div className="Button">
           <button style={styles.buttonTextStyles}>LOGIN</button>
         </div>
         {/* <Link to="/home">{strings.goToText} Home</Link> */}
@@ -51,21 +51,27 @@ const styles = {
   welcomeTextStyles: {
     textAlign: "center",
     fontWeight: "900",
+    flexDirection: "column",
   },
   headerTextDiv: {
     marginTop: "100px",
     textAlign: "center",
+
+    // backgroundColor: "grey",
   },
   buttonTextStyles: {
     borderRadius: "50px",
     width: "150px",
     height: "30px",
     marginTop: "10px",
-    backgroundColor: "Green",
+    backgroundColor: "green",
     textAlign: "center",
+    cursor: "pointer",
   },
-  inputstyleText: {
-    // textDecoration:
+  inputstyleText: {},
+  Background: {
+    backgroundColor: "grey",
+    height: "650px",
   },
 };
 
