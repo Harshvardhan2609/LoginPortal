@@ -42,7 +42,7 @@ const Login = () => {
         <Link to="/SignUp">{strings.goToText} SignUp</Link>
         <br />
         <Link to="/ForgotPassword">{strings.goToText} ForgotPassword</Link>
-        <p>{JSON.stringify(dummyApiData.page)}</p>
+        {/* <p>{JSON.stringify(dummyApiData.page)}</p> */}
       </div>
     </div>
   );
