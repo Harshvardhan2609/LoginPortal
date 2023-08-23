@@ -59,7 +59,7 @@ const Login = () => {
   return (
     <div className="Body">
       <div style={styles.headerTextDiv}>
-        <h1 style={styles.welcomeTextStyles}>Welcome</h1>
+        <h1 style={styles.welcomeTextStyles}>Natures Spring</h1>
         <div className="Input" style={styles.inputstyleText}>
           <input
             type
