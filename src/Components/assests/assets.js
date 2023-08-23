@@ -1,0 +1,13 @@
+export const productImage1 = require('./IMG-20230822-WA0020.jpg');
+export const productImage2 = require('./IMG-20230822-WA0021.jpg');
+export const productImage3 = require('./IMG-20230822-WA0022.jpg');
+export const productImage4 = require('./IMG-20230822-WA0023.jpg');
+export const productImage5 = require('./IMG-20230822-WA0024.jpg');
+export const productImage6 = require('./IMG-20230822-WA0025.jpg');
+export const productImage7 = require('./IMG-20230822-WA0026.jpg');
+export const productImage8 = require('./IMG-20230822-WA0027.jpg');
+export const productImage9 = require('./IMG-20230822-WA0028.jpg');
+export const productImage10 = require('./IMG-20230822-WA0029.jpg');
+export const productImage11 = require('./IMG-20230822-WA0030.jpg');
+export const productImage12 = require('./IMG-20230822-WA0031.jpg');
+export const productImage13 = require('./IMG-20230822-WA0032.jpg'); 
