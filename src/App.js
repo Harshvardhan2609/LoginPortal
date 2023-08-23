@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import SignUp from "./Components/Signup/Signup";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import Cart from "./Components/Cart/Cart";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="home" element={<Home />} />
         <Route path="SignUp" element={<SignUp />} />
         <Route path="ForgotPassword" element={<ForgotPassword />} />
+        <Route path="Cart" element={<Cart />} />
       </Routes>
     </Router>
   );

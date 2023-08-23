@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import strings from "../Constants/StringConstants";
 import { useNavigate } from "react-router-dom";
+import "../../App.css";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -48,7 +49,14 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        textAlign: "center",
+        fontWeight: "900",
+        flexDirection: "column",
+        marginTop: "150px",
+      }}
+    >
       <div1>
         <input
           placeholder="Enter your Username"

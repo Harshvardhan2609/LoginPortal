@@ -28,19 +28,7 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
+
   .heading {
     font-size: 24px;
     font-weight: bold;
@@ -90,4 +78,4 @@
   .add-to-cart:hover {
     background-color: #0062cc;
   }
-}
+
