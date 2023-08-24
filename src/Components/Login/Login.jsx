@@ -46,15 +46,35 @@ const Login = () => {
 
   //   useEffect(() => {
   //   }, [dummyApiData]);
+  var pattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/; // regex for email
+  const isEmailAddress = (str) => {
+    if (str.match(pattern)) {
+      return false;
+    } else {
+      return true;
+    }
+
+    return true;
+  };
   const onPressLoginButton = () => {
-    // alert();
-    let LoginObjectToBeSentToAPI = {
-      userName: userName,
-      password: password,
-    };
-    alert("Data saved successfully");
-    console.log("Data is :" + JSON.stringify(LoginObjectToBeSentToAPI));
-    navigate("Home");
+    alert();
+    if (userName == "") {
+      alert("Please enter username");
+    } else if (password == "") {
+      alert("Please enter password");
+    } else if (userName.length < 5) {
+      alert("Please enter a username greater than 5 digits");
+    } else if (isEmailAddress(userName)) {
+      alert("Please write a valid EmailId");
+    } else {
+      let LoginObjectToBeSentToAPI = {
+        userName: userName,
+        password: password,
+      };
+      alert("Data saved successfully");
+      console.log("Data is :" + JSON.stringify(LoginObjectToBeSentToAPI));
+      navigate("Home");
+    }
   };
   return (
     <div className="Body">
@@ -63,7 +83,7 @@ const Login = () => {
         <div className="Input" style={styles.inputstyleText}>
           <input
             type
-            placeholder="Username"
+            placeholder="Email"
             value={userName}
             onChange={(obj) => onChangeUserName(obj.target.value)}
           />

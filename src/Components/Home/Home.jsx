@@ -105,8 +105,8 @@ const Home = () => {
     },
   ]);
 
-  const navigateToCart = () => {
-    navigate("/Cart");
+  const navigateToCart = (id) => {
+    navigate("/Cart", { itemId: id });
   };
 
   const renderProducts = (item) => {
@@ -116,7 +116,7 @@ const Home = () => {
         <p>{item.productname}</p>
         <p>{item.price}</p>
         <div>
-          <button onClick={() => navigateToCart()}>Add to Cart</button>
+          <button onClick={() => navigateToCart(item.id)}>Add to Cart</button>
         </div>
       </div>
     );
