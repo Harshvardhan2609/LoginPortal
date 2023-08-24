@@ -27,26 +27,6 @@ const Login = () => {
     console.log("handle change called" + password);
   };
 
-  //   const [dummyApiData, setDummyApiData] = useState({});
-  //   const dummyApiCall = () => {
-  //     fetch("https://reqres.in/api/users?page=2")
-  //       .then((results) => {
-  //         console.log("result is : " + results);
-  //         return results.json();
-  //       })
-  //       .then((data) => {
-  //         console.log("data is : " + JSON.stringify(data));
-  //         setDummyApiData(data);
-  //       });
-  //   };
-
-  useEffect(() => {
-    // dummyApiCall();
-    localStorage.removeItem("productIdsArr");
-  }, []);
-
-  //   useEffect(() => {
-  //   }, [dummyApiData]);
   var pattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/; // regex for email
   const isEmailAddress = (str) => {
     if (str.match(pattern)) {
@@ -57,11 +37,11 @@ const Login = () => {
 
     return true;
   };
+
   const onPressLoginButton = () => {
-    //alert();
-    if (userName == "") {
+    if (userName === "") {
       alert("Please enter username");
-    } else if (password == "") {
+    } else if (password === "") {
       alert("Please enter password");
     } else if (userName.length < 5) {
       alert("Please enter a username greater than 5 digits");
@@ -77,68 +57,43 @@ const Login = () => {
       navigate("Home");
     }
   };
+
+  useEffect(() => {
+    localStorage.removeItem("productIdsArr");
+  }, []);
+
   return (
     <div className="Body">
-      <div style={styles.headerTextDiv}>
-        <h1 style={styles.welcomeTextStyles}>Natures Spring</h1>
-        <div className="Input" style={styles.inputstyleText}>
+      <div className="headerTextDiv">
+        <h1 className="welcomeTextStyles">Natures Spring</h1>
+        <div className="Input inputstyleText">
           <input
-            type
+            type="text"
             placeholder="Email"
             value={userName}
             onChange={(obj) => onChangeUserName(obj.target.value)}
           />
           <br />
           <input
-            type
+            type="password"
             placeholder="Password"
             value={password}
             onChange={(obj) => onChangepassword(obj.target.value)}
           />
-
           <br />
         </div>
         <div className="Button">
-          <button onClick={onPressLoginButton} style={styles.buttonTextStyles}>
+          <button onClick={onPressLoginButton} className="buttonTextStyles">
             LOGIN
           </button>
         </div>
-        {/* { <Link to="/home">{strings.goToText} Home</Link> */}
-        {<br />}
+        <br />
         <Link to="/SignUp">{strings.goToText} SignUp</Link>
         <br />
         <Link to="/ForgotPassword">{strings.goToText} ForgotPassword</Link>
-        {/* <p>{JSON.stringify(dummyApiData.page)}</p> */}
       </div>
     </div>
   );
-};
-const styles = {
-  welcomeTextStyles: {
-    textAlign: "center",
-    fontWeight: "900",
-    flexDirection: "column",
-  },
-  headerTextDiv: {
-    marginTop: "100px",
-    textAlign: "center",
-
-    // backgroundColor: "grey",
-  },
-  buttonTextStyles: {
-    borderRadius: "50px",
-    width: "150px",
-    height: "30px",
-    marginTop: "10px",
-    backgroundColor: "green",
-    textAlign: "center",
-    cursor: "pointer",
-  },
-  inputstyleText: {},
-  Background: {
-    backgroundColor: "grey",
-    height: "650px",
-  },
 };
 
 export default Login;
