@@ -57,7 +57,7 @@ const Login = () => {
     return true;
   };
   const onPressLoginButton = () => {
-    alert();
+    //alert();
     if (userName == "") {
       alert("Please enter username");
     } else if (password == "") {

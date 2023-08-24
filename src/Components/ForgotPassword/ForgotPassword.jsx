@@ -13,21 +13,38 @@ const ForgotPassword = () => {
   const [confirmPassword, setconfirmPassword] = useState("");
 
   const onPressConfirmPasswordButton = () => {
-    let forgotPasswordObjectToBeSentToAPI = {
-      userName: userName,
-      phoneNumber: mobileNumber,
-      password: enterPassword,
-      confirmPassword: confirmPassword,
-    };
-    alert("Data saved successfully");
-    console.log(JSON.stringify(forgotPasswordObjectToBeSentToAPI));
-    // setUsername("");  // Reseting the inital states uncheck if you want to stay on the same page, else change naviage to desired location
-    // setmobileNumber("");
-    // setenterPassword("");
-    // setconfirmPassword("");
-    navigate("/");
+    if (userName == "") {
+      alert("Please enter username");
+    } else if (mobileNumber == "") {
+      alert("Please enter MobileNo");
+    } else if (isNaN(mobileNumber)) {
+      // Check if mobileNumber is not a number
+      alert("Please enter a valid mobile number");
+    } else if (mobileNumber.length !== 10) {
+      // Check if mobileNumber is not 10 digits
+      alert("Please enter mobile number of 10 digits");
+    } else if (userName.length < 5) {
+      alert("Please enter a username greater than 5 digits");
+    } else if (enterPassword == "") {
+      alert("Please write a valid password");
+    } else if (confirmPassword == "") {
+      alert("Please enter a confirm password");
+    } else {
+      let forgotPasswordObjectToBeSentToAPI = {
+        userName: userName,
+        phoneNumber: mobileNumber,
+        password: enterPassword,
+        confirmPassword: confirmPassword,
+      };
+      alert("Data saved successfully");
+      console.log(JSON.stringify(forgotPasswordObjectToBeSentToAPI));
+      // setUsername("");  // Reseting the inital states uncheck if you want to stay on the same page, else change naviage to desired location
+      // setmobileNumber("");
+      // setenterPassword("");
+      // setconfirmPassword("");
+      navigate("/");
+    }
   };
-
   const onChangeUserName = (text) => {
     setUsername(text);
     console.log("handle change called" + userName);
