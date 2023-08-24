@@ -68,29 +68,29 @@ const SignUp = () => {
     >
       <div1>
         <input
-          placeholder="Enter your FirstName"
+          placeholder="Enter your First Name"
           type="text"
           value={firstName}
           onChange={(obj) => onChangefirstName(obj.target.value)}
         />
         <br />
         <input
-          placeholder="Enter your lastName"
+          placeholder="Enter your Last Name"
           type="text"
           value={lastName}
           onChange={(obj) => onChangelastName(obj.target.value)}
         />
         <br />
         <input
-          placeholder="Enter your emailId"
+          placeholder="Enter your Email Id"
           type="text"
           value={emailId}
           onChange={(obj) => onChangeemailId(obj.target.value)}
         />
         <br />
         <input
-          placeholder="Enter your mobileNo"
-          type="number"
+          placeholder="Enter your Mobile Number"
+          type="text"
           value={mobileNo}
           onChange={(obj) => onChangemobileNo(obj.target.value)}
         />{" "}

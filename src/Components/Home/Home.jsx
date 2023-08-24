@@ -142,11 +142,14 @@ const Home = () => {
   return (
     <div
       style={{
-        alignContent: "center",
-        // backgroundColor: "red",
-        justifyContent: "center",
+        // marginTop: "100px",
+        // alignContent: "center",
+        // justifyContent: "center",
         marginLeft: "150px",
         marginRight: "150px",
+        // display: "flex",
+        height: "200vh",
+        // flexGrow: "inherit",
       }}
     >
       <div style={{ flexDirection: "column" }}>
