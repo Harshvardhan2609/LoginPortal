@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import strings from "../Constants/StringConstants";
 import { useNavigate } from "react-router-dom";
@@ -104,10 +104,23 @@ const Home = () => {
       price: "Rs.695",
     },
   ]);
-
+  const [cartItemsArr, setCartItemsArr] = useState([]);
+  let arr = [];
   const navigateToCart = (id) => {
-    navigate("/Cart", { itemId: id });
+    alert("Item added to cart successfully");
+    cartItemsArr.push(id);
+    console.log(cartItemsArr);
+    localStorage.setItem("productIdsArr", JSON.stringify(cartItemsArr));
   };
+
+  useEffect(() => {
+    let ids = JSON.parse(localStorage.getItem("productIdsArr"));
+    if (cartItemsArr) {
+      setCartItemsArr([]);
+    } else {
+      setCartItemsArr(ids);
+    }
+  }, []);
 
   const renderProducts = (item) => {
     return (
@@ -122,6 +135,10 @@ const Home = () => {
     );
   };
 
+  const onClickCartIcon = () => {
+    navigate("/Cart");
+  };
+
   return (
     <div
       style={{
@@ -132,7 +149,10 @@ const Home = () => {
         marginRight: "150px",
       }}
     >
-      <h3>{strings.homeText}</h3>
+      <div style={{ flexDirection: "column" }}>
+        <h3>{strings.homeText}</h3>
+        <button onClick={() => onClickCartIcon()}>GO to Cart</button>
+      </div>
       {productArr.map((item) => {
         return renderProducts(item);
       })}

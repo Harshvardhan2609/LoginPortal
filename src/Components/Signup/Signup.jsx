@@ -13,19 +13,29 @@ const SignUp = () => {
   const [mobileNo, setmobileNo] = useState("");
 
   const onPressConfirmSignUpButton = () => {
-    let signUpObjectToBeSentToAPI = {
-      lastName: lastName,
-      emailId: emailId,
-      firstName: firstName,
-      mobileNo: mobileNo,
-    };
-    alert("Data saved successfully");
-    console.log(JSON.stringify(signUpObjectToBeSentToAPI));
-    // setUsername("");  // Reseting the inital states uncheck if you want to stay on the same page, else change naviage to desired location
-    // setmobileNumber("");
-    // setenterPassword("");
-    // setconfirmPassword("");
-    navigate("/");
+    if (firstName == "") {
+      alert("Enter a valid First name");
+    } else if (lastName == "") {
+      alert("Enter a valid Last Name");
+    } else if (emailId == "") {
+      alert("Enter a valid Email Id");
+    } else if (mobileNo == "" || mobileNo.length >= 10) {
+      alert("Enter a valid mobile number");
+    } else {
+      let signUpObjectToBeSentToAPI = {
+        lastName: lastName,
+        emailId: emailId,
+        firstName: firstName,
+        mobileNo: mobileNo,
+      };
+      alert("Data saved successfully");
+      console.log(JSON.stringify(signUpObjectToBeSentToAPI));
+      // setUsername("");  // Reseting the inital states uncheck if you want to stay on the same page, else change naviage to desired location
+      // setmobileNumber("");
+      // setenterPassword("");
+      // setconfirmPassword("");
+      navigate("/");
+    }
   };
 
   const onChangefirstName = (text) => {

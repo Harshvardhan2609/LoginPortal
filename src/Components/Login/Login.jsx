@@ -42,6 +42,7 @@ const Login = () => {
 
   useEffect(() => {
     // dummyApiCall();
+    localStorage.removeItem("productIdsArr");
   }, []);
 
   //   useEffect(() => {
