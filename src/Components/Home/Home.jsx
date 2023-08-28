@@ -97,12 +97,12 @@ const Home = () => {
       imagepath: productImage12,
       price: "Rs.435",
     },
-    {
-      id: 13,
-      productname: "Wild Rice",
-      imagepath: productImage13,
-      price: "Rs.695",
-    },
+    // {
+    //   id: 13,
+    //   productname: "Wild Rice",
+    //   imagepath: productImage13,
+    //   price: "Rs.695",
+    // },
   ]);
   const [cartItemsArr, setCartItemsArr] = useState([]);
   let arr = [];
@@ -122,16 +122,26 @@ const Home = () => {
     }
   }, []);
 
-  const renderProducts = (item) => {
+  const renderProducts = (p) => {
     return (
-      <div style={{ display: "inline-block", margin: "30px" }}>
-        <img src={item.imagepath} style={{ width: "150px" }} />
-        <p>{item.productname}</p>
-        <p>{item.price}</p>
-        <div>
-          <button onClick={() => navigateToCart(item.id)}>Add to Cart</button>
+      <div class="card col-3" style={{ width: "18rem" }}>
+        <img class="card-img-top" src={p.imagepath} alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{p.productname}</h5>
+          <p class="card-text">{p.price}</p>
+          <button class="btn btn-primary" onClick={() => navigateToCart(p.id)}>
+            Add to cart
+          </button>
         </div>
       </div>
+      // <div style={{ display: "inline-block", margin: "30px" }}>
+      //   <img src={item.imagepath} style={{ width: "150px" }} />
+      //   <p>{item.productname}</p>
+      //   <p>{item.price}</p>
+      //   <div>
+      //     <button onClick={() => navigateToCart(item.id)}>Add to Cart</button>
+      //   </div>
+      // </div>
     );
   };
 
@@ -140,27 +150,43 @@ const Home = () => {
   };
 
   return (
-    <div
-      style={{
-        // marginTop: "100px",
-        // alignContent: "center",
-        // justifyContent: "center",
-        marginLeft: "150px",
-        marginRight: "150px",
-        // display: "flex",
-        height: "200vh",
-        // flexGrow: "inherit",
-      }}
-    >
-      <div style={{ flexDirection: "column" }}>
-        <h3>{strings.homeText}</h3>
-        <button onClick={() => onClickCartIcon()}>GO to Cart</button>
+    <>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-decoration-none mx-3" href="#">
+          WelCome To Cart
+        </a>
+        <button className="btn btn-success" onClick={() => onClickCartIcon()}>
+          GO to Cart
+        </button> 
+        <Link
+          to="/"
+          className="btn btn-secondary text-decoration-none mt-3 mb-3 mx-2"
+          style={{ float: "right" }}
+        >
+          {strings.goToText} login
+        </Link>
+       
+      </nav>
+      <div
+        style={{
+          // marginTop: "100px",
+          // alignContent: "center",
+          // justifyContent: "center",
+          marginLeft: "150px",
+          marginRight: "150px",
+          // display: "flex",
+          height: "200vh",
+          // flexGrow: "inherit",
+        }}
+      >
+        <div className="container myDiv mt-3">
+          {productArr.map((item) => {
+            return renderProducts(item);
+          })}
+        </div>
+
       </div>
-      {productArr.map((item) => {
-        return renderProducts(item);
-      })}
-      <Link to="/">{strings.goToText} login</Link>
-    </div>
+    </>
   );
 };
 

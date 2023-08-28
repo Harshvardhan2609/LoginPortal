@@ -118,22 +118,36 @@ export default function Cart() {
   // });
   useEffect(() => {
     let ids = JSON.parse(localStorage.getItem("productIdsArr"));
-    // [1,3]
-    //alert(ids.length);
-    var newArr = productArr.filter((item) => ids.includes(item.id));
-    setCartArr(newArr);
-  });
-  const renderProducts = (item) => {
-    console.log("item is : " + item);
+    if (ids) {
+      var newArr = productArr.filter((item) => ids.includes(item.id));
+      setCartArr(newArr);
+    } else {
+      alert("Cart is empty");
+    }
+  }, []);
+  // [1,3]
+  //alert(ids.length);
+
+  const renderProducts = (p) => {
     return (
-      <div style={{ display: "inline-block", margin: "30px" }}>
-        <img src={item.imagepath} style={{ width: "150px" }} />
-        <p>{item.productname}</p>
-        <p>{item.price}</p>
-        <div>
-          {/* <button onClick={() => navigateToCart(item.id)}>Add to Cart</button> */}
+      <div class="card col-3" style={{ width: "18rem" }}>
+        <img class="card-img-top" src={p.imagepath} alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{p.productname}</h5>
+          <p class="card-text">{p.price}</p>
+          {/* <button class="btn btn-primary" onClick={() => navigateToCart(p.id)}>
+            Add to cart
+          </button> */}
         </div>
       </div>
+      // <div style={{ display: "inline-block", margin: "30px" }}>
+      //   <img src={item.imagepath} style={{ width: "150px" }} />
+      //   <p>{item.productname}</p>
+      //   <p>{item.price}</p>
+      //   <div>
+      //     {/* <button onClick={() => navigateToCart(item.id)}>Add to Cart</button> */}
+      //   </div>
+      // </div>
     );
   };
 
@@ -176,7 +190,7 @@ export default function Cart() {
       key: "rzp_test_nFfnAMA5AJRLPM", //"rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
       amount: amount.toString(),
       currency: currency,
-      name: "Beerendra Singh.",
+      name: "Natures Spring.",
       description: "Test Transaction",
       // image: { logo },
       order_id: order_id,
@@ -213,14 +227,47 @@ export default function Cart() {
   }
 
   return (
-    <div>
-      {/* <p>cart screen</p> */}
-      {cartArr?.map((item) => {
-        return renderProducts(item);
-      })}
-      <button className="App-link" onClick={displayRazorpay}>
-        ClickToPay
-      </button>
-    </div>
+    <>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-decoration-none mx-3" href="#">
+          WelCome To Cart
+        </a>
+        <Link
+          to="/home"
+          className="btn btn-success text-decoration-none mt-3 mb-3 mx-2"
+          style={{ float: "right" }}
+        >
+          {strings.goToText} Return To Cart
+        </Link>
+        <Link
+          to="/"
+          className="btn btn-secondary text-decoration-none mt-3 mb-3 mx-2"
+          style={{ float: "right" }}
+        >
+          {strings.goToText} login
+        </Link>
+        <button
+          className="App-link btn btn-primary"
+          onClick={displayRazorpay}
+          style={{ float: "right" }}
+        >
+          Pay
+        </button>
+      </nav>
+      <div>
+        {/* <p>cart screen</p> */}
+        <div className="container myDiv mt-3">
+          {cartArr.length != 0
+            ? cartArr?.map((item) => {
+                return renderProducts(item);
+              })
+            : console.log("Cart is empty")}
+        </div>
+
+        {/* <button className="App-link btn btn-primary" onClick={displayRazorpay}>
+          Pay
+        </button> */}
+      </div>
+    </>
   );
 }

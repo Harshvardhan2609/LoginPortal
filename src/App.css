@@ -1,12 +1,23 @@
 /* Body styles */
+.Body{
+    display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh; 
+  font-size: 16px;
+
+}
+
+
 body {
   background: linear-gradient(to bottom, #ffffff, #fdfdfd);
   color: #3c2b92;
   font-family: Arial, sans-serif;
-  display: grid;
+  /* display: grid;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   height: 100vh; 
   font-size: 16px;
 }
@@ -71,4 +82,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+.myDiv{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 40px;
+}
+img{
+  height:70%;
 }
