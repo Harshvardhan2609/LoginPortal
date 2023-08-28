@@ -176,7 +176,7 @@ export default function Cart() {
       key: "rzp_test_nFfnAMA5AJRLPM", //"rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
       amount: amount.toString(),
       currency: currency,
-      name: "Natures Spring.",
+      name: "Beerendra Singh.",
       description: "Test Transaction",
       // image: { logo },
       order_id: order_id,
@@ -219,7 +219,7 @@ export default function Cart() {
         return renderProducts(item);
       })}
       <button className="App-link" onClick={displayRazorpay}>
-        Pay
+        ClickToPay
       </button>
     </div>
   );
