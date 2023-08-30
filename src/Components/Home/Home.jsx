@@ -151,13 +151,13 @@ const Home = () => {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg " style={{ opacity: "0.7" }}>
         <a class="navbar-brand text-decoration-none mx-3" href="#">
           WelCome To Cart
         </a>
         <button className="btn btn-success" onClick={() => onClickCartIcon()}>
           GO to Cart
-        </button> 
+        </button>
         <Link
           to="/"
           className="btn btn-secondary text-decoration-none mt-3 mb-3 mx-2"
@@ -165,7 +165,6 @@ const Home = () => {
         >
           {strings.goToText} login
         </Link>
-       
       </nav>
       <div
         style={{
@@ -184,7 +183,6 @@ const Home = () => {
             return renderProducts(item);
           })}
         </div>
-
       </div>
     </>
   );

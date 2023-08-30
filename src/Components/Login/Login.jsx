@@ -83,14 +83,24 @@ const Login = () => {
           <br />
         </div>
         <div className="Button">
-          <button onClick={onPressLoginButton} className="buttonTextStyles btn btn-secondary">
+          <button
+            onClick={onPressLoginButton}
+            className="buttonTextStyles btn btn-secondary"
+          >
             LOGIN
           </button>
         </div>
         <br />
-        <Link to="/SignUp" className="btn btn-success text-decoration-none">SignUp</Link>
-       
-        <Link to="/ForgotPassword"className="btn btn-danger mx-3 text-decoration-none">Forgot Password</Link>
+        <Link to="/SignUp" className="btn btn-success text-decoration-none">
+          SignUp
+        </Link>
+
+        <Link
+          to="/ForgotPassword"
+          className="btn btn-danger mx-3 text-decoration-none"
+        >
+          Forgot Password
+        </Link>
       </div>
     </div>
   );

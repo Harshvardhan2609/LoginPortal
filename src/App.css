@@ -6,7 +6,8 @@
   align-items: center; 
   height: 100vh; 
   font-size: 16px;
-
+  background-image: url('C:\Users\harshvardhan\Desktop\Front end Project\LoginPortal\src\Components\assests\pexels-photo-533982.jpeg');
+  background-size: cover;
 }
 
 
@@ -20,6 +21,8 @@ body {
   align-items: center; */
   height: 100vh; 
   font-size: 16px;
+  background-image: url('C:\Users\harshvardhan\Desktop\Front end Project\LoginPortal\src\Components\assests\pexels-photo-533982.jpeg');
+  background-repeat:no-repeat;
 }
 
 /* Header text styles */
@@ -27,6 +30,7 @@ h1 {
   text-align: center;
   font-weight: bold;
   margin-top: 50px;
+  font-family:cursive;
 }
 
 /* Form styles */

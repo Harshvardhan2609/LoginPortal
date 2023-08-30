@@ -228,7 +228,7 @@ export default function Cart() {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg " style={{ opacity: "0.7" }}>
         <a class="navbar-brand text-decoration-none mx-3" href="#">
           WelCome To Cart
         </a>
